@@ -65,7 +65,7 @@ with open('./models/news_token_pickle', 'wb') as f:     # file 모드 : wb = 바
 # print(wordsize)
 
 max_len = 0
-for i in range(len(tokened_X)):             # tokened_X의 길이만큼 돌면서 제일 긴문장의 길이 알아내야 => 11919
+for i in range(len(tokened_X)):             # tokened_X의 길이만큼 돌면서 제일 긴문장의 길이 알아내야 => max_20, wordsize_11919
     if max_len < len(tokened_X[i]):
         max_len = len(tokened_X[i])
 print(max_len)
