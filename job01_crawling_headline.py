@@ -1,3 +1,5 @@
+# 오늘자 헤드라인 뉴스 크롤링 => job06 예측 시 사용
+
 from bs4 import BeautifulSoup
 import requests
 import re
@@ -31,7 +33,7 @@ for i in range(6):
     df_titles = pd.concat([df_titles, df_section_titles], axis='rows', ignore_index=True)
 print(df_titles)
 print(df_titles.category.value_counts())
-df_titles.to_csv('./crawling_data/naver_headline_news_{}.csv'.format(           # 만들어지는 파일
+df_titles.to_csv('./crawling_data/naver_headline_news_{}.csv'.format(           # 만들어지는 파일 = 오늘자 헤드라인 뉴스
     datetime.datetime.now().strftime('%Y%m%d')), index=False)
 
 
