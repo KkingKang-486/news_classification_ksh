@@ -23,14 +23,18 @@ for i in range(6):
     title_tags = soup.select('.cluster_text_headline')
     titles = []
     for title_tag in title_tags:
-        titles.append(title_tag.text)
+        title = title_tag.text
+        title = re.compile('[^가-힣 ]').sub(' ', title)
+        titles.append(title)
     df_section_titles = pd.DataFrame(titles, columns=['titles'])
     df_section_titles['category'] = category[i]
     df_titles = pd.concat([df_titles, df_section_titles], axis='rows', ignore_index=True)
 print(df_titles)
 print(df_titles.category.value_counts())
-df_titles.to_csv('./crawlind_data/naver_headline_news_{}.csv'.format(
+df_titles.to_csv('./crawling_data/naver_headline_news_{}.csv'.format(           # 만들어지는 파일
     datetime.datetime.now().strftime('%Y%m%d')), index=False)
+
+
 
 
 
