@@ -1,3 +1,5 @@
+# 카테고리 섹션별 (5-'World', 6-'IT') 뉴스제목 크롤링. 추후 1~6 취합하여 concat
+
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 import pandas as pd
